@@ -10,69 +10,76 @@ header {
     height: 70px;
     overflow: hidden;
     background: #fff;
-    .header-contents {
-        width: 1000px;
-        margin: 0 auto;
-        .header-line {
-            display: flex;
-            .header-line-left {
-                flex: 1;
-                display: flex;
-                
-                ul {
-                    display: flex;
-                    height: 100%;   // 手动延续？
-                    li {
-                        width: 80px;
-                        height: 100%;
-                        display: flex; // 手动延续？
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    li:hover {
-                        border-bottom: 3px solid #0084ff;
-                    }
-                }
-            }
-            .header-line-right {
-                .buttons-wrapper {
-                    display: flex;
-                    align-items: center;
-                }
-            }
-        }
-    }
 }
 
 .main {
     margin-top: 72px;
-}
-
-.content {
-    display: flex;
-    width: 1000px;
-    margin: 10px auto; // 经典搞法
+    .main-header {
+        background: #fff;
+        margin-bottom: 4px;
+    }
     .main-content {
-        flex: 1;
-        .card {
-            background: #fff;
+        width: 1000px;
+        margin: 0 auto;
+
+        display: flex;
+
+        .article {
+            flex: 1;
             height: 3000px;
-            margin-right: 10px;
-            border-radius: 2px;
+            margin-right: 5px;
+        }
+
+        aside {
+            width: 300px;
+
+            .card {
+                width: 300px;   // 元素被设置 为 fixed 时，会发生宽度坍塌
+                height: 500px;
+            }
+
         }
     }
-    .nav-wrap {
-        width: 300px;
-        .nav {
-            .card {
-                background: #fff;
-                height: 500px; // 这个高度超出 整个屏幕，当设置为fixed 时会出现问题
-                border-radius: 2px;
-                width: 300px; // 绝对定位元素宽度计算 --- 悬而未决
+}
+
+.headers-container {
+    width: 1000px;
+    margin: 0 auto;
+    .header-line {
+        display: flex;
+        height: 70px; // 人为只，为了更换header 方便
+        .header-line-left {
+            flex: 1;
+            display: flex;
+            ul {
+                display: flex;
+                height: 100%; // 手动延续？
+                li {
+                    width: 80px;
+                    height: 100%;
+                    display: flex; // 手动延续？
+                    justify-content: center;
+                    align-items: center;
+                }
+                li:hover {
+                    border-bottom: 3px solid #0084ff;
+                }
+            }
+        }
+        .header-line-right {
+            .buttons-wrapper {
+                display: flex;
+                align-items: center;
             }
         }
     }
 }
+
+.card {
+    background: #fff;
+    border-radius: 2px;
+}
+
 
 #goBack {
     position: fixed;
@@ -107,7 +114,6 @@ header {
 
 // transition 复习
 .searchBar__input {
-    display: inline-block; // 只有这样才会被改变宽度
     width: 300px;
     transition: width 1s;
     background: #f6f6f6;

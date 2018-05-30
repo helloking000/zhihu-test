@@ -8,50 +8,53 @@ header {
   height: 70px;
   overflow: hidden;
   background: #fff; }
-  header .header-contents {
-    width: 1000px;
-    margin: 0 auto; }
-    header .header-contents .header-line {
-      display: flex; }
-      header .header-contents .header-line .header-line-left {
-        flex: 1;
-        display: flex; }
-        header .header-contents .header-line .header-line-left ul {
-          display: flex;
-          height: 100%; }
-          header .header-contents .header-line .header-line-left ul li {
-            width: 80px;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center; }
-          header .header-contents .header-line .header-line-left ul li:hover {
-            border-bottom: 3px solid #0084ff; }
-      header .header-contents .header-line .header-line-right .buttons-wrapper {
-        display: flex;
-        align-items: center; }
 
 .main {
   margin-top: 72px; }
-
-.content {
-  display: flex;
-  width: 1000px;
-  margin: 10px auto; }
-  .content .main-content {
-    flex: 1; }
-    .content .main-content .card {
-      background: #fff;
+  .main .main-header {
+    background: #fff;
+    margin-bottom: 4px; }
+  .main .main-content {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex; }
+    .main .main-content .article {
+      flex: 1;
       height: 3000px;
-      margin-right: 10px;
-      border-radius: 2px; }
-  .content .nav-wrap {
-    width: 300px; }
-    .content .nav-wrap .nav .card {
-      background: #fff;
-      height: 500px;
-      border-radius: 2px;
+      margin-right: 5px; }
+    .main .main-content aside {
       width: 300px; }
+      .main .main-content aside .card {
+        width: 300px;
+        height: 500px; }
+
+.headers-container {
+  width: 1000px;
+  margin: 0 auto; }
+  .headers-container .header-line {
+    display: flex;
+    height: 70px; }
+    .headers-container .header-line .header-line-left {
+      flex: 1;
+      display: flex; }
+      .headers-container .header-line .header-line-left ul {
+        display: flex;
+        height: 100%; }
+        .headers-container .header-line .header-line-left ul li {
+          width: 80px;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+        .headers-container .header-line .header-line-left ul li:hover {
+          border-bottom: 3px solid #0084ff; }
+    .headers-container .header-line .header-line-right .buttons-wrapper {
+      display: flex;
+      align-items: center; }
+
+.card {
+  background: #fff;
+  border-radius: 2px; }
 
 #goBack {
   position: fixed;
@@ -80,7 +83,6 @@ header {
   box-shadow: 0 1px 3px rgba(26, 26, 26, 0.1); }
 
 .searchBar__input {
-  display: inline-block;
   width: 300px;
   transition: width 1s;
   background: #f6f6f6;

@@ -39,7 +39,7 @@
 
 <body>
     <header class="shadow">
-        <div class="header-contents">
+        <div class="headers-container">
             <div class="header-line">
                 <div class="header-line-left">
                     <ul>
@@ -82,39 +82,40 @@
     </header>
 
     <div class="main">
-        <div class="header shadow" style="color: red;">
-            <div class="header-inner">
-                <div class="header-wrap">
-                    <ul>
-                        <li>综合</li>
-                        <li>用户</li>
-                        <li>话题</li>
-                        <li>专栏</li>
-                        <li>Live</li>
-                        <li>私家课</li>
-                        <li>电子书</li>
-                    </ul>
-                </div>
-
-                <div class="buttons-wrapper">
-                    <div class="searchBar__input" onclick="handleSearchbarClick(event)">
-                        <input type="text">
+        <div class="main-header shadow">
+            <div class="headers-container">
+                <div class="header-line" style="color: red;">
+                    <div class="header-line-left">
+                        <ul>
+                            <li>综合</li>
+                            <li>用户</li>
+                            <li>话题</li>
+                            <li>专栏</li>
+                            <li>Live</li>
+                            <li>私家课</li>
+                            <li>电子书</li>
+                        </ul>
+                    </div>
+                    <div class="header-line-right">
+                        <div class="buttons-wrapper">
+                            <div class="searchBar__input" onclick="handleSearchbarClick(event)">
+                                <input type="text">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="content">
-            <div class="main-content">
-                <div class="card shadow">
 
-                </div>
-            </div>
-            <div class="nav-wrap">
-                <div class="nav">
-                    <div class="card shadow"></div>
-                </div>
-            </div>
         </div>
+        <div class="main-content">
+            <div class="article">
+                <div class="card"></div>
+            </div>
+            <aside>
+                <div class="card"></div>
+            </aside>
+        </div>
+
     </div>
 
     <div id="goBack" class="button" onclick="goback()">
@@ -132,7 +133,7 @@
 
 
 
-        var stickyComponent = document.querySelector('.nav');
+        var stickyComponent = document.querySelector('.main-content aside .card');
         var stickyComponentPositionOfTop = stickyComponent.getBoundingClientRect().top;
 
         function handleSearchbarClick(event) {
@@ -157,7 +158,7 @@
         // translate 属性不属性怎么用！！！！ 一个简单效果搞了半天
 
         function switchAppHeader() {
-            var main = document.querySelector('.header-contents');
+            var main = document.querySelector('.headers-container');
             main.style.transform = 'translateY(0)';
             main.style.transition = 'transform 0.5s';
 
@@ -169,7 +170,7 @@
         }
 
         function switchPageHeader() {
-            var main = document.querySelector('.header-contents');
+            var main = document.querySelector('.headers-container');
             main.style.transform = 'translateY(-50%)';
             main.style.transition = 'transform 0.5s';
             // var pageHeader = document.querySelector('.page');
