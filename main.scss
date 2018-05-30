@@ -2,62 +2,56 @@ $primary-color: #f6f6f6;
 body {
     background: $primary-color;
 }
-.header-inner {
-    width: 1000px;
-    margin: 0 auto;
-    display: flex;
-}
-.header-wrapper {
-    overflow: hidden;
-    height: 70px;
-}
-.header {
-    display: flex;
-    background: #fff;
-    height: 62px;
 
-    .header-wrap {
-        flex: 1;
-        display: flex;
-
-        align-items: center;
-    }
-    ul {
-        display: flex;
-        height: 100%;
-        
-
-        li {
-            width: 80px;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        li:hover {
-            border-bottom: 3px solid #0084ff;
-        }
-    }
-
-    .buttons-wrapper {
-        display: flex;
-        align-items: center;
-    }
-}
-.fix-header {
+header {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 70px;
+    overflow: hidden;
+    background: #fff;
+    .header-contents {
+        width: 1000px;
+        margin: 0 auto;
+        .header-line {
+            display: flex;
+            .header-line-left {
+                flex: 1;
+                display: flex;
+                
+                ul {
+                    display: flex;
+                    height: 100%;   // 手动延续？
+                    li {
+                        width: 80px;
+                        height: 100%;
+                        display: flex; // 手动延续？
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    li:hover {
+                        border-bottom: 3px solid #0084ff;
+                    }
+                }
+            }
+            .header-line-right {
+                .buttons-wrapper {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
 }
-.top-margin {
-    margin-top: 80px;
+
+.main {
+    margin-top: 72px;
 }
+
 .content {
     display: flex;
     width: 1000px;
     margin: 10px auto; // 经典搞法
-
     .main-content {
         flex: 1;
         .card {
@@ -74,12 +68,10 @@ body {
                 background: #fff;
                 height: 500px; // 这个高度超出 整个屏幕，当设置为fixed 时会出现问题
                 border-radius: 2px;
-                width: 300px;  // 绝对定位元素宽度计算 --- 悬而未决
+                width: 300px; // 绝对定位元素宽度计算 --- 悬而未决
             }
         }
     }
-
-    
 }
 
 #goBack {
@@ -101,6 +93,7 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
 }
+
 .button-outline {
     background: #fff;
     color: #0084ff;
@@ -114,18 +107,18 @@ body {
 
 // transition 复习
 .searchBar__input {
-    display: inline-block;  // 只有这样才会被改变宽度
+    display: inline-block; // 只有这样才会被改变宽度
     width: 300px;
     transition: width 1s;
     background: #f6f6f6;
     padding: 4px 10px;
     border-radius: 5px;
     border: 1px solid #ebebeb;
-
     input {
-        width: 100%;  // 要和外面的套子 保持宽度一致
+        width: 100%; // 要和外面的套子 保持宽度一致
     }
 }
+
 .searchBar__input--focused {
     width: 400px;
     background: #fff;

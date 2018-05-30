@@ -38,53 +38,50 @@
 </head>
 
 <body>
-<div class="header-wrapper fix-header shadow">
-        <div class="main-wrap">
-            <div class="app header">
-                <div class="header-inner">
-                    <div class="header-wrap">
-                        <ul>
-                            <li>首页</li>
-                            <li>发现</li>
-                            <li>话题</li>
-                        </ul>
-                        <!-- 为啥 input 外面要套一个框呢，是为了控制 input 的外框 -->
-                        <div class="searchBar__input" onclick="handleSearchbarClick(event)">
-                            <input type="text">
-                        </div>
+    <header class="shadow">
+        <div class="header-contents">
+            <div class="header-line">
+                <div class="header-line-left">
+                    <ul>
+                        <li>首页</li>
+                        <li>发现</li>
+                        <li>话题</li>
+                    </ul>
+                    <!-- 为啥 input 外面要套一个框呢，是为了控制 input 的外框 -->
+                    <div class="searchBar__input" onclick="handleSearchbarClick(event)">
+                        <input type="text">
                     </div>
+                </div>
 
+                <div class="header-line-right">
                     <div class="buttons-wrapper">
                         <div class="button button-outline">登录</div>
                         <div class="button">加入知乎</div>
                     </div>
                 </div>
             </div>
-            <div class="page header">
-                <div class="header-inner">
-                    <div class="header-wrap">
-                        <ul>
-                            <li>综合</li>
-                            <li>用户</li>
-                            <li>话题</li>
-                            <li>专栏</li>
-                            <li>Live</li>
-                            <li>私家课</li>
-                            <li>电子书</li>
-                        </ul>
-                    </div>
-
-                    <div class="buttons-wrapper">
-                        <div class="searchBar__input" onclick="handleSearchbarClick(event)">
-                            <input type="text">
-                        </div>
+            <div class="header-line">
+                <div class="header-line-left">
+                    <ul>
+                        <li>综合</li>
+                        <li>用户</li>
+                        <li>话题</li>
+                        <li>专栏</li>
+                        <li>Live</li>
+                        <li>私家课</li>
+                        <li>电子书</li>
+                    </ul>
+                </div>
+                <div class="header-line-right">
+                    <div class="searchBar__input" onclick="handleSearchbarClick(event)">
+                        <input type="text">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="main top-margin">
+    <div class="main">
         <div class="header shadow" style="color: red;">
             <div class="header-inner">
                 <div class="header-wrap">
@@ -160,7 +157,7 @@
         // translate 属性不属性怎么用！！！！ 一个简单效果搞了半天
 
         function switchAppHeader() {
-            var main = document.querySelector('.main-wrap');
+            var main = document.querySelector('.header-contents');
             main.style.transform = 'translateY(0)';
             main.style.transition = 'transform 0.5s';
 
@@ -172,7 +169,7 @@
         }
 
         function switchPageHeader() {
-            var main = document.querySelector('.main-wrap');
+            var main = document.querySelector('.header-contents');
             main.style.transform = 'translateY(-50%)';
             main.style.transition = 'transform 0.5s';
             // var pageHeader = document.querySelector('.page');

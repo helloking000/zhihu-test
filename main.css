@@ -1,45 +1,38 @@
 body {
   background: #f6f6f6; }
 
-.header-inner {
-  width: 1000px;
-  margin: 0 auto;
-  display: flex; }
-
-.header-wrapper {
-  overflow: hidden;
-  height: 70px; }
-
-.header {
-  display: flex;
-  background: #fff;
-  height: 62px; }
-  .header .header-wrap {
-    flex: 1;
-    display: flex;
-    align-items: center; }
-  .header ul {
-    display: flex;
-    height: 100%; }
-    .header ul li {
-      width: 80px;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-    .header ul li:hover {
-      border-bottom: 3px solid #0084ff; }
-  .header .buttons-wrapper {
-    display: flex;
-    align-items: center; }
-
-.fix-header {
+header {
   position: fixed;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  background: #fff; }
+  header .header-contents {
+    width: 1000px;
+    margin: 0 auto; }
+    header .header-contents .header-line {
+      display: flex; }
+      header .header-contents .header-line .header-line-left {
+        flex: 1;
+        display: flex; }
+        header .header-contents .header-line .header-line-left ul {
+          display: flex;
+          height: 100%; }
+          header .header-contents .header-line .header-line-left ul li {
+            width: 80px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+          header .header-contents .header-line .header-line-left ul li:hover {
+            border-bottom: 3px solid #0084ff; }
+      header .header-contents .header-line .header-line-right .buttons-wrapper {
+        display: flex;
+        align-items: center; }
 
-.top-margin {
-  margin-top: 80px; }
+.main {
+  margin-top: 72px; }
 
 .content {
   display: flex;
