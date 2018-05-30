@@ -1,0 +1,133 @@
+$primary-color: #f6f6f6;
+body {
+    background: $primary-color;
+}
+.header-inner {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+.header-wrapper {
+    overflow: hidden;
+    height: 70px;
+}
+.header {
+    display: flex;
+    background: #fff;
+    height: 62px;
+
+    .header-wrap {
+        flex: 1;
+        display: flex;
+
+        align-items: center;
+    }
+    ul {
+        display: flex;
+        height: 100%;
+        
+
+        li {
+            width: 80px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li:hover {
+            border-bottom: 3px solid #0084ff;
+        }
+    }
+
+    .buttons-wrapper {
+        display: flex;
+        align-items: center;
+    }
+}
+.fix-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.top-margin {
+    margin-top: 80px;
+}
+.content {
+    display: flex;
+    width: 1000px;
+    margin: 10px auto; // 经典搞法
+
+    .main-content {
+        flex: 1;
+        .card {
+            background: #fff;
+            height: 3000px;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+    }
+    .nav-wrap {
+        width: 300px;
+        .nav {
+            .card {
+                background: #fff;
+                height: 500px; // 这个高度超出 整个屏幕，当设置为fixed 时会出现问题
+                border-radius: 2px;
+                width: 300px;  // 绝对定位元素宽度计算 --- 悬而未决
+            }
+        }
+    }
+
+    
+}
+
+#goBack {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    cursor: pointer;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    background: #0084ff;
+    color: #fff;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.button-outline {
+    background: #fff;
+    color: #0084ff;
+    border: 1px solid #0084ff;
+}
+
+// box-shadow 复习
+.shadow {
+    box-shadow: 0 1px 3px rgba(26, 26, 26, .1);
+}
+
+// transition 复习
+.searchBar__input {
+    display: inline-block;  // 只有这样才会被改变宽度
+    width: 300px;
+    transition: width 1s;
+    background: #f6f6f6;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid #ebebeb;
+
+    input {
+        width: 100%;  // 要和外面的套子 保持宽度一致
+    }
+}
+.searchBar__input--focused {
+    width: 400px;
+    background: #fff;
+    border: 1px solid black;
+}
