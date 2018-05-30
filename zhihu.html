@@ -31,15 +31,16 @@
             /* background color有点问题 */
             background: transparent;
 
+            /* 决定字体大小 */
             font-size: inherit;
         }
     </style>
 </head>
 
 <body>
-    <div class="header-wrapper fix-header">
+<div class="header-wrapper fix-header shadow">
         <div class="main-wrap">
-            <div class="app header shadow">
+            <div class="app header">
                 <div class="header-inner">
                     <div class="header-wrap">
                         <ul>
@@ -83,7 +84,6 @@
         </div>
     </div>
 
-
     <div class="main top-margin">
         <div class="header shadow" style="color: red;">
             <div class="header-inner">
@@ -123,6 +123,7 @@
     <div id="goBack" class="button" onclick="goback()">
         回到顶部
     </div>
+
     <script>
         // 插入内容
         var insertPosition = document.querySelector('.main-content .card');
