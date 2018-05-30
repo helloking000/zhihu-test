@@ -17,7 +17,8 @@ header {
   .main .main-content {
     width: 1000px;
     margin: 0 auto;
-    display: flex; }
+    display: flex;
+    align-items: flex-start; }
     .main .main-content .article {
       flex: 1;
       height: 3000px;
@@ -36,21 +37,23 @@ header {
     height: 70px; }
     .headers-container .header-line .header-line-left {
       flex: 1;
-      display: flex; }
+      display: flex;
+      align-items: center; }
       .headers-container .header-line .header-line-left ul {
-        display: flex;
-        height: 100%; }
+        display: flex; }
         .headers-container .header-line .header-line-left ul li {
           width: 80px;
-          height: 100%;
           display: flex;
           justify-content: center;
           align-items: center; }
         .headers-container .header-line .header-line-left ul li:hover {
           border-bottom: 3px solid #0084ff; }
-    .headers-container .header-line .header-line-right .buttons-wrapper {
+    .headers-container .header-line .header-line-right {
       display: flex;
       align-items: center; }
+      .headers-container .header-line .header-line-right .buttons-wrapper {
+        display: flex;
+        align-items: center; }
 
 .card {
   background: #fff;
@@ -84,7 +87,7 @@ header {
 
 .searchBar__input {
   width: 300px;
-  transition: width 1s;
+  transition: width .5s;
   background: #f6f6f6;
   padding: 4px 10px;
   border-radius: 5px;
@@ -96,5 +99,17 @@ header {
   width: 400px;
   background: #fff;
   border: 1px solid black; }
+
+.test {
+  display: flex;
+  height: 100px;
+  align-items: center; }
+  .test .test1 {
+    flex: 1;
+    background: royalblue; }
+  .test .test2 {
+    width: 50px;
+    background: red;
+    height: 50px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -23,6 +23,7 @@ header {
         margin: 0 auto;
 
         display: flex;
+        align-items: flex-start;
 
         .article {
             flex: 1;
@@ -51,13 +52,12 @@ header {
         .header-line-left {
             flex: 1;
             display: flex;
+            align-items: center;
             ul {
                 display: flex;
-                height: 100%; // 手动延续？
                 li {
                     width: 80px;
-                    height: 100%;
-                    display: flex; // 手动延续？
+                    display: flex;
                     justify-content: center;
                     align-items: center;
                 }
@@ -67,6 +67,8 @@ header {
             }
         }
         .header-line-right {
+            display: flex;
+            align-items: center;
             .buttons-wrapper {
                 display: flex;
                 align-items: center;
@@ -115,7 +117,7 @@ header {
 // transition 复习
 .searchBar__input {
     width: 300px;
-    transition: width 1s;
+    transition: width .5s;
     background: #f6f6f6;
     padding: 4px 10px;
     border-radius: 5px;
@@ -129,4 +131,20 @@ header {
     width: 400px;
     background: #fff;
     border: 1px solid black;
+}
+
+.test {
+    display: flex;
+    height: 100px;
+    align-items: center;
+
+    .test1 {
+        flex: 1;
+        background: royalblue;
+    }
+    .test2 {
+        width: 50px;
+        background: red;
+        height: 50px;
+    }
 }

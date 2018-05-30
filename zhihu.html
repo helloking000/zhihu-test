@@ -48,7 +48,7 @@
                         <li>话题</li>
                     </ul>
                     <!-- 为啥 input 外面要套一个框呢，是为了控制 input 的外框 -->
-                    <div class="searchBar__input" onclick="handleSearchbarClick(event)">
+                    <div class="searchBar__input" onfocusin="handleSearchbarFocus(event)" onfocusout="handleSearchbarBlur(event)">
                         <input type="text">
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                     </ul>
                 </div>
                 <div class="header-line-right">
-                    <div class="searchBar__input" onclick="handleSearchbarClick(event)">
+                    <div class="searchBar__input" onfocusin="handleSearchbarFocus(event)" onfocusout="handleSearchbarBlur(event)">
                         <input type="text">
                     </div>
                 </div>
@@ -97,22 +97,22 @@
                         </ul>
                     </div>
                     <div class="header-line-right">
-                        <div class="buttons-wrapper">
-                            <div class="searchBar__input" onclick="handleSearchbarClick(event)">
-                                <input type="text">
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
         <div class="main-content">
-            <div class="article">
+<div class="article shadow">
                 <div class="card"></div>
             </div>
-            <aside>
-                <div class="card"></div>
+<aside class="shadow">
+                <div class="card">
+                    <div class="test">
+                        <div class="test1"></div>
+                        <div class="test2"></div>
+                    </div>
+                </div>
             </aside>
         </div>
 
@@ -123,7 +123,7 @@
     </div>
 
     <script>
-        // 插入内容
+        // 页面继续构建：插入内容
         var insertPosition = document.querySelector('.main-content .card');
         for (var i = 0; i < 133; i++) {
             var son = document.createElement('div');
@@ -132,12 +132,15 @@
         }
 
 
-
         var stickyComponent = document.querySelector('.main-content aside .card');
         var stickyComponentPositionOfTop = stickyComponent.getBoundingClientRect().top;
 
-        function handleSearchbarClick(event) {
+        function handleSearchbarFocus(event) {
             event.currentTarget.classList.add("searchBar__input--focused");
+        }
+
+        function handleSearchbarBlur(event) {
+            event.currentTarget.classList.remove("searchBar__input--focused");
         }
         window.onscroll = function () {
 
@@ -155,7 +158,7 @@
             }
         }
 
-        // translate 属性不属性怎么用！！！！ 一个简单效果搞了半天
+        // translate 属性不知道怎么用！！！！ 一个简单效果搞了半天
 
         function switchAppHeader() {
             var main = document.querySelector('.headers-container');
