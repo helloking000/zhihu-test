@@ -1,0 +1,9 @@
+h1 {
+  border: 1px solid black; }
+
+.sub-content1 {
+  overflow: hidden;
+  height: 0;
+  transition: height .5s ease-out; }
+
+/*# sourceMappingURL=main.css.map */

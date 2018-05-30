@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <div>
+        <h1 onclick="doAccordion(this)">标题1</h1>
+        <div class="sub-content1">
+            <div>sub content</div>
+            <div>sub content</div>
+            <div>sub content</div>
+        </div>
+    </div>
+    <div>
+        <h1 onclick="doAccordion(this)">标题2</h1>
+    </div>
+    <script>
+    var opened = false;
+    function doAccordion(params) {
+        var subcontent = document.querySelector('.sub-content1');
+        if (!opened) {
+            // subcontent.style.display = 'block';
+            subcontent.style.height = subcontent.scrollHeight + 'px'; // scrollHeight 不会被磨灭！
+            opened = true;
+        } else {
+            // subcontent.style.display = 'none';
+            subcontent.style.height = 0 + 'px';
+            opened = false;
+        }
+
+    }
+    </script>
+</body>
+</html>

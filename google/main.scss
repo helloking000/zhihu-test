@@ -1,0 +1,12 @@
+h1 {
+    border: 1px solid black;
+}
+
+.sub-content1 {
+    // display: none;   // display 为none 相当于删除元素，被删除的元素也无法 应用transition, 所以代码全程使用 height 去控制
+
+    overflow: hidden;
+    height: 0;
+
+    transition: height .5s ease-out;
+}
