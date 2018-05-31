@@ -10,7 +10,9 @@ ul {
 }
 
 .top-header-wrapper-wrapper {
-    // position: fixed;   // 有问题
+    width: 100%;
+    position: fixed;   // 有问题
+    top: 0;
     .top-header-wrapper {
         padding: 0 24px;
         height: 48px;
@@ -69,6 +71,10 @@ ul {
     }
 }
 
+.main {
+    margin-top: 48px;
+
+}
 
 
 
@@ -85,16 +91,4 @@ h1 {
     overflow: hidden;
     height: 0;
     transition: height .5s ease-out;
-}
-
-.box {
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.boxTranslate {
-    border: 1px solid red;
-    transform: translateY(30px);
 }

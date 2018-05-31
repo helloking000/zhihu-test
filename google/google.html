@@ -31,6 +31,19 @@
             <div>登录</div>
         </div>
     </header>
+    <div class="main">
+        <div>
+            <h1 onclick="doAccordion(this)">标题1</h1>
+            <div class="sub-content1">
+                <div>sub content</div>
+                <div>sub content</div>
+                <div>sub content</div>
+            </div>
+        </div>
+        <div>
+            <h1>标题2</h1>
+        </div>
+    </div>
     <script>
         var header = document.querySelector('.top-header-wrapper');
         var actived = false;
@@ -44,23 +57,6 @@
             }
         }
     </script>
-    <!-- <div>
-        <h1 onclick="doAccordion(this)">标题1</h1>
-        <div class="sub-content1">
-            <div>sub content</div>
-            <div>sub content</div>
-            <div>sub content</div>
-        </div>
-    </div>
-    <div>
-        <h1 onclick="doAccordion(this)">标题2</h1>
-    </div>
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box boxTranslate">3</div>
-    <div class="box">4</div>
-    <div class="box">5</div>
-    <div class="box">6</div>
 
     <script>
         var opened = false;
@@ -78,7 +74,7 @@
             }
 
         }
-    </script> -->
+    </script>
 </body>
 
 </html>
