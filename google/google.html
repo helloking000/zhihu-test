@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
+
 <body>
-    <div>
+    <header class="top-header-wrapper-wrapper">
+        <div class="top-header-wrapper">
+            <div class="top-header-1">
+                <span class="logo-wrapper">
+                    <img src="https://developers.google.com/web/images/web-fundamentals-icon192x192.png" class="logo">
+                </span>
+                <span>Web</span>
+            </div>
+            <nav class="top-header-2">
+                <ul>
+                    <li>Fundamentals</li>
+                    <li>Tools</li>
+                    <li>Updates</li>
+                    <li>Case Studies</li>
+                </ul>
+            </nav>
+            <div class="top-header-3" onclick="toggleActive()">
+            </div>
+            <div>所有产品</div>
+            <div>登录</div>
+        </div>
+    </header>
+    <script>
+        var header = document.querySelector('.top-header-wrapper');
+        var actived = false;
+        function toggleActive() {
+            if (actived) {
+                header.classList.add('form-active');
+                actived = false;
+            } else {
+                header.classList.remove('form-active');
+                actived = true;
+            }
+        }
+    </script>
+    <!-- <div>
         <h1 onclick="doAccordion(this)">标题1</h1>
         <div class="sub-content1">
             <div>sub content</div>
@@ -18,21 +55,30 @@
     <div>
         <h1 onclick="doAccordion(this)">标题2</h1>
     </div>
-    <script>
-    var opened = false;
-    function doAccordion(params) {
-        var subcontent = document.querySelector('.sub-content1');
-        if (!opened) {
-            // subcontent.style.display = 'block';
-            subcontent.style.height = subcontent.scrollHeight + 'px'; // scrollHeight 不会被磨灭！
-            opened = true;
-        } else {
-            // subcontent.style.display = 'none';
-            subcontent.style.height = 0 + 'px';
-            opened = false;
-        }
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box boxTranslate">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
 
-    }
-    </script>
+    <script>
+        var opened = false;
+
+        function doAccordion(params) {
+            var subcontent = document.querySelector('.sub-content1');
+            if (!opened) {
+                // subcontent.style.display = 'block';
+                subcontent.style.height = subcontent.scrollHeight + 'px'; // scrollHeight 不会被磨灭！
+                opened = true;
+            } else {
+                // subcontent.style.display = 'none';
+                subcontent.style.height = 0 + 'px';
+                opened = false;
+            }
+
+        }
+    </script> -->
 </body>
+
 </html>

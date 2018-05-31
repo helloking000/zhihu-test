@@ -1,12 +1,98 @@
+html,
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.top-header-wrapper-wrapper {
+    // position: fixed;   // 有问题
+    .top-header-wrapper {
+        padding: 0 24px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        .top-header-1 {
+            display: flex;
+            align-items: center;
+            .logo-wrapper {
+                display: inline-block; // 深入 体验这种 样式的写法。
+                .logo {
+                    // 修饰图片大小
+                    height: 32px;
+                    margin: 2px 16px 2px 0;
+                }
+            }
+        }
+
+        &.form-active {
+            nav.top-header-2 {
+                flex: 0 0 auto;
+                width: 0;
+                visibility: hidden;
+            }
+            .top-header-3 {
+                flex: 1 0 auto;
+            }
+        }
+
+        nav.top-header-2 {
+            // flex: 1 1 0;
+            flex: 1 0 auto;
+            transition: flex 0.5s, width 0.5s;
+            ul {
+                display: flex;
+                // max-width: 448px;
+                min-width: 448px;
+                li {
+                    display: inline-block;
+                    padding: 0 24px;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .top-header-3 {
+            width: 200px;
+            background: #f6f6f6;
+            height: 100%;
+
+            transition: flex 0.5s,
+            width 0.5s;
+        }
+    }
+}
+
+
+
+
+
+
+
+
 h1 {
     border: 1px solid black;
 }
 
 .sub-content1 {
     // display: none;   // display 为none 相当于删除元素，被删除的元素也无法 应用transition, 所以代码全程使用 height 去控制
-
     overflow: hidden;
     height: 0;
-
     transition: height .5s ease-out;
+}
+
+.box {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxTranslate {
+    border: 1px solid red;
+    transform: translateY(30px);
 }
