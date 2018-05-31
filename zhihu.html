@@ -143,8 +143,11 @@
         function handleSearchbarBlur(event) {
             event.currentTarget.classList.remove("searchBar__input--focused");
         }
-        window.onscroll = function () {
 
+        window.onscroll = throttle2(scrollHandler);
+        // window.onscroll = scrollHandler;
+        function scrollHandler() {
+            console.log('scorlling...');
             var top = document.body.scrollTop + document.documentElement.scrollTop;
             if (top > 70) {
                 stickyComponent.style.position = 'fixed'; // fixed 难道有默认值 auto
@@ -159,29 +162,56 @@
             }
         }
 
+        function throttle(func) {
+            var start = 0;
+            var timer;
+
+            return function fn() {
+                var now = Date.now();                           
+                var isTimeout = now - start > 300;
+                var isFirstRun = !start;
+
+                if (isFirstRun || isTimeout) {
+                    func();  // 直接执行
+                    start = now;
+                }
+
+                clearTimeout(timer)
+                timer = null;
+                timer = setTimeout(() => {
+                    func();
+                }, 300);
+
+            }
+        }
+
+        // 简单版 -- 思路更纯粹
+        // 参考：http://sampsonblog.com/simple-throttle-function/
+        function throttle2(func) {
+            var wait = false;
+            return function() {
+                if (!wait) {
+                    func();
+                    wait = true;
+                    setTimeout(() => {
+                        wait = false;
+                    }, 300);
+                }
+            }
+        }
+
         // translate 属性不知道怎么用！！！！ 一个简单效果搞了半天
 
         function switchAppHeader() {
             var main = document.querySelector('.headers-container');
             main.style.transform = 'translateY(0)';
             main.style.transition = 'transform 0.5s';
-
-            // var pageHeader = document.querySelector('.page');
-            // var appHeader = document.querySelector('.app');
-            // // pageHeader.style.transform = 'translateY(100%)'
-            // // appHeader.style.transform = 'translateY(100%)';
-            // appHeader.style.transition = 'transform 0.5s';
         }
 
         function switchPageHeader() {
             var main = document.querySelector('.headers-container');
             main.style.transform = 'translateY(-50%)';
             main.style.transition = 'transform 0.5s';
-            // var pageHeader = document.querySelector('.page');
-            // var appHeader = document.querySelector('.app');
-            // pageHeader.style.transform = 'translateY(-100%)'
-            // appHeader.style.transform = 'translateY(-100%)';
-            // pageHeader.style.transition = 'transform 1s';
         }
 
         function goback() {
