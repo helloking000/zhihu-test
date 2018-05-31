@@ -10,8 +10,7 @@ ul {
 .top-header-wrapper-wrapper .top-header-wrapper {
   padding: 0 24px;
   height: 48px;
-  display: flex;
-  align-items: center; }
+  display: flex; }
   .top-header-wrapper-wrapper .top-header-wrapper .top-header-1 {
     display: flex;
     align-items: center; }
@@ -28,12 +27,14 @@ ul {
     flex: 1 0 auto; }
   .top-header-wrapper-wrapper .top-header-wrapper nav.top-header-2 {
     flex: 1 0 auto;
-    transition: flex 0.5s, width 0.5s; }
+    transition: flex 0.5s, width 0.5s;
+    display: flex; }
     .top-header-wrapper-wrapper .top-header-wrapper nav.top-header-2 ul {
       display: flex;
       min-width: 448px; }
       .top-header-wrapper-wrapper .top-header-wrapper nav.top-header-2 ul li {
-        display: inline-block;
+        display: flex;
+        align-items: center;
         padding: 0 24px;
         font-size: 13px; }
   .top-header-wrapper-wrapper .top-header-wrapper .top-header-3 {

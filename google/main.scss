@@ -15,7 +15,6 @@ ul {
         padding: 0 24px;
         height: 48px;
         display: flex;
-        align-items: center;
         .top-header-1 {
             display: flex;
             align-items: center;
@@ -44,12 +43,15 @@ ul {
             // flex: 1 1 0;
             flex: 1 0 auto;
             transition: flex 0.5s, width 0.5s;
+
+            display: flex;
             ul {
                 display: flex;
                 // max-width: 448px;
                 min-width: 448px;
                 li {
-                    display: inline-block;
+                    display: flex;
+                    align-items: center;
                     padding: 0 24px;
                     font-size: 13px;
                 }
